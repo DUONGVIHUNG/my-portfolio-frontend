@@ -1,12 +1,34 @@
-# React + Vite
+# My Personal Portfolio Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+自分の履歴と職務経歴データを表すようなフロントエンドを実装。
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📅 Project Log
 
-## Expanding the ESLint configuration
+### 2025-08-30(土)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Task: Reactについて勉強（１）**
+
+* `npm`と`Vite`ツールで`React` プロジェクトの初期化の方法を勉強
+* `useState`と`useEffect`の使い方を学ぶ
+* `.map()`とリストデータ型の勉強
+* コンポーネントに分割するために、`props`の使い方を学ぶ
+
+
+---
+
+### 2025-08-31（日）
+
+**Task:  Reactについて勉強（２）**
+
+* `Lifting State Up`について勉強
+* 学んだことについて練習
+
+---
+
+### 2025-08-31（日）
+
+**Task: 本プロジェクトのスタート（ヒーローセクションページの作成）**
+
+* 当日変更
+
