@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import Navbar from './components/Navbar.jsx';
+import Hero from './Pages/Hero.jsx';
+import Footer from './components/Footer.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState('home');
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'home':
+        return <Hero />;
+      case 'projects':
+        return <h2 className="text-4xl text-white">Projects Section</h2>;
+      case 'about':
+        return <h2 className="text-4xl text-white">About Section</h2>;
+      default:
+        return <h2 className="text-4xl text-white">Page Not Found</h2>;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="container mx-auto px-4">
+        <Navbar
+          title="My Portfolio"
+          setActiveSection={setActiveSection}
+          activeSection={activeSection}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <main className="container mx-auto py-8">
+        {renderSection()}
+      </main>
+      <Footer/>
+    </div>
+  );
 }
 
-export default App
+export default App;
