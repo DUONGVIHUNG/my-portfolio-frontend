@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 function Navbar  ({ title }) {
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', section: '/about' }
+    { name: 'About', path: '/about' },
+    {name:'Project', path:'/project'},
   ];
 
   const [isMenuOpen,setIsMenuOpen] = useState(false);
@@ -40,15 +41,10 @@ function Navbar  ({ title }) {
     // </nav>
 
 
-  <nav className="bg-white border-gray-200 dark:bg-gray-900">
+  <nav className="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-        <img
-          src="https://flowbite.com/docs/images/logo.svg"
-          className="h-8"
-          alt="Flowbite Logo"
-        />
-        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+        <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 dark:text-white">
           {title}
         </span>
       </NavLink>
@@ -84,18 +80,19 @@ function Navbar  ({ title }) {
           {
             navItems.map(
               (item) => {
+                return(
                 <li key={item.name}>
 
                   <NavLink to={item.path}
                   onClick={()=>setIsMenuOpen(false)}
                   className= {
                     ({isActive}) =>
-                      `${baseLink}${isActive?activeLink:inActiveLink}`
+                      `${baseLink} ${isActive?activeLink:inActiveLink}`
                   }
                   >
                       {item.name}
                   </NavLink>
-                </li>
+                </li>);
               }
             )
           }
