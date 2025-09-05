@@ -1,6 +1,7 @@
 import React from 'react';
 import useFetch from '../hooks/useFetch';
 import { getUserProfile } from '../services/githubService';
+import { downloadCvService } from '../services/downloadCvService';
 
 const GitHubIcon = () => (
   <svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" className="mb-2"> {/* Added margin-bottom */}
@@ -18,6 +19,10 @@ const Hero = () => {
 
   const {data:user,loading,error} = useFetch(getUserProfile,'DUONGVIHUNG');
   console.log('[Component] Rendering with state:', { user, loading, error });
+
+  const cvUrl = downloadCvService({fileName : 'my-cv.pdf'});
+
+  console.log(cvUrl);
 
   if (loading){
     return(
@@ -112,7 +117,8 @@ const Hero = () => {
         </svg>
       </a>
       <a
-        href="#"
+        href={cvUrl}
+        download="my-cv.pdf"
         className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
       >
       <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
