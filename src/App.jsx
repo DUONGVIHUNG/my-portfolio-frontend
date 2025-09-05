@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import {Routes,Route} from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Hero from './Pages/Hero.jsx';
+import About from './Pages/About.jsx';
+import Project from './Pages/Project.jsx';
+import Footer from './components/Footer.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen flex flex-col bg-slate-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+      <div className="container mx-auto px-4">
+        <Navbar
+          title="My Portfolio"
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <main className="flex-grow">
+        <Routes>
+          <Route path='/' element={<Hero/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/project' element={<Project/>} />
+        </Routes>
+      </main>
+      <Footer/>
+    </div>
+
+  );
 }
 
-export default App
+export default App;
