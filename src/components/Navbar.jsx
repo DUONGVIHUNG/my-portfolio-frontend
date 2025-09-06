@@ -5,7 +5,6 @@ function Navbar  ({ title }) {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    {name:'Project', path:'/project'},
   ];
 
   const [isMenuOpen,setIsMenuOpen] = useState(false);
