@@ -13,11 +13,11 @@ function Project(){
       setOpenIndex(openIndex === index? -1:index);
     }
 
-    const projectData = [
-  { title: 'Project One', content: 'blablablablabk' }, // This is projectData[0]
-  { title: 'Project Two', content: '...' }, // This is projectData[1]
-  // ... and so on
-];
+//     const projectData = [
+//   { title: 'Project One', content: 'blablablablabk' }, // This is projectData[0]
+//   { title: 'Project Two', content: '...' }, // This is projectData[1]
+//   // ... and so on
+// ];
 
   if (loading){
     return(
@@ -80,7 +80,7 @@ function Project(){
               <div className="flex justify-end">
                 <div className="text-right">
                   <h3 className="font-bold text-lg text-gray-900 dark:text-white">Start of Journey</h3>
-                  <p className="text-sm text-gray-500">My first "Hello, World!"</p>
+                  <p className="text-sm text-gray-500">2023-04 新卒・入社</p>
                 </div>
               </div>
             </div>
@@ -108,19 +108,54 @@ function Project(){
                     onToggle={() => handleToggle(index)}
                   >
                     {/* We pass the date and content as children for better structure */}
-                    <div>
-                      <span className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        ポジション
-                      </span>
-                      <p>{project.projectRole}</p>
-                      <span className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        テックスタック
-                      </span>
-                      <p>{project.techStack}</p>
-                      <span className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        プロジェクトサイズ
-                      </span>
-                      <p>{project.projectSize}</p>
+                    <div className="space-y-6">
+                       <div>
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">ポジション</h4>
+                          <p className="text-base text-gray-800 dark:text-gray-200">{project.projectRole}</p>
+                        </div>
+
+                         <div>
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">プロジェクトサイズ</h4>
+                          <p className="text-base text-gray-800 dark:text-gray-200">{project.projectSize}</p>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">担当フェーズ</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {project.projectPhase.map((phase) => (
+                              <span
+                                key={phase}
+                                className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300"
+                              >
+                                {phase}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">テックスタック</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {project.techStack.map((tech) => (
+                              <span
+                                key={tech}
+                                className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                         <div>
+                          <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">実績・取り組み</h4>
+                          <ol className="list-decimal list-inside text-base text-gray-800 dark:text-gray-200">
+                            {project.lessonLearned.map((lesson, index) => (
+                              <li key={index}>{lesson}</li>
+                            ))}
+                          </ol>
+                        </div>
+
                     </div>
                   </Card>
                 </div>
@@ -132,7 +167,7 @@ function Project(){
             <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-gray-400 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
             <div className="w-1/2 ml-auto pl-16">
               <h3 className="font-bold text-lg text-gray-900 dark:text-white">To be continued...</h3>
-              <p className="text-sm text-gray-500">Always learning and building.</p>
+              <p className="text-sm text-gray-500">学び続き成長続きへ</p>
             </div>
           </div>
         </div>

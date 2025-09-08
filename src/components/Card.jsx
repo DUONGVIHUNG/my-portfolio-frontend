@@ -3,7 +3,7 @@ import React from "react";
 
 function Card({projectId,projectName,startDate,endDate,details,children,isOpen,onToggle}) {
     return(
-        <div className="border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 bg-white dark:bg-gray-800">
+        <div className="border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
             <h2>
                 <button
                 type="button"
