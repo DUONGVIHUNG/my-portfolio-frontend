@@ -19,7 +19,7 @@ const GitHubIcon = () => (
 
 const Hero = () => {
 
-  const {data:user,loading,error} = useFetch(getUser);
+  const {data:user,loading,error} = useFetch(getUser,1);
   console.log('[Component] Rendering with state:', { user, loading, error });
 
   const cvUrl = downloadCvService({fileName : 'my-cv.pdf'});
