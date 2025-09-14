@@ -61,9 +61,9 @@ function Project(){
   return (
     <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div className="mb-16 text-center">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Projects</h2>
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"> 職務経歴</h2>
         <p className="text-gray-500 sm:text-xl dark:text-gray-400">
-          A timeline of my key projects. Click on any project to see the details.
+          各職務経歴をクリックすると、担当したプロジェクトや取組の詳細をご覧いただけます。
         </p>
       </div>
 
